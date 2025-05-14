@@ -57,14 +57,6 @@ requirements.txt # Dependencies
 
 
 ---
-
-## 🛠 Example Request
-
-```bash
-curl -X POST http://localhost:8000/mcp \
-    -H "Content-Type: application/json" \
-    -d '{"task": "echo", "payload": {"msg": "hello"}}'
----
 📈 Coming Soon
 
 This core server will soon power a Modular Investor Outreach AI Agent, with:
@@ -83,3 +75,14 @@ This core server will soon power a Modular Investor Outreach AI Agent, with:
     Anthropic’s Claude MCP architecture
 
     A2SPA Protocol (Agent-to-Agent Secure Protocol Architecture)
+
+    ---
+
+## 🛠 Example Request
+
+```bash
+curl -X POST http://localhost:8000/mcp \
+    -H "Content-Type: application/json" \
+    -d '{"task": "echo", "payload": {"msg": "hello"}}'
+---
+
