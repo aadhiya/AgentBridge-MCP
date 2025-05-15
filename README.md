@@ -102,11 +102,38 @@ This core server will soon power a Modular Investor Outreach AI Agent, with:
 
     ---
 
-## 🛠 Example Request
+## 🛠 How to Run the Email Agent System
 
-```bash
-curl -X POST http://localhost:8000/mcp \
-    -H "Content-Type: application/json" \
-    -d '{"task": "echo", "payload": {"msg": "hello"}}'
+# 🔧 1. Install dependencies
+pip install -r requirements.txt
+
+# 📡 2. Start the MCP server (backend task router)
+uvicorn app.main:app --reload
+
+# 🧠 3. Optional: Start Ollama if not running already
+ollama run llama3
+
+# 🖥️ 4. Launch the Streamlit UI
+streamlit run streamlit_app.py
+---
+
+## 💡 What This System Does
+
+    Upload a .csv of names and emails (columns: name,email)
+
+    Set a subject and shared body for the outreach message
+
+    Attach any files (pitch decks, PDFs, etc.)
+
+    Ollama personalizes each email with greeting and sign-off
+
+    MCP server dispatches email sending via Gmail SMTP
+    ---
+## 📁 File Requirements
+
+Make sure .env is configured with:
+EMAIL_USER=your@gmail.com
+EMAIL_PASS=your_app_password   # from Gmail App Passwords
+
 ---
 
